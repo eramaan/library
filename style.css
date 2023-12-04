@@ -6,3 +6,75 @@
 html {
     font-size: 62.5%;
 }
+.material-symbols-outlined {
+    font-variation-settings:
+    'FILL' 0,
+    'wght' 200,
+    'GRAD' 0,
+    'opsz' 24;
+    color: goldenrod;
+}
+  
+#main-container {
+    display: grid;
+    grid-template-rows: 100px auto;
+    background-color: burlywood;
+    min-height: 100svh;
+    padding: 25px;
+}
+h1 {
+    color: goldenrod;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    padding: 2.5rem;
+    font-size: 3rem;
+    justify-self: center;
+}
+.book {
+    background-color: darkkhaki;
+    box-shadow: 2px 2px 5px lightcoral;
+    border-radius: 0 5px 5px 0;
+    display: grid;
+    justify-items: center;
+    padding: 15px;
+}
+#shelf {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(min(20rem, 100%), 1fr));
+    gap: 15px;
+}
+label {
+    font-size: 1.2rem;
+    align-self: end;
+    margin-top: 5px;
+}
+.author {
+    align-self: center;
+}
+.title {
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+.btn {
+    align-self: end;
+}
+.btn button {
+    background-color: transparent;
+    border: 0;
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    margin: 5px;
+}
+.btn button:hover {
+    box-shadow: 2px 2px 5px lightcoral;
+}
+form {
+    display: grid;
+}
+#submit-btn {
+    margin-top: 10px;
+}
+#read {
+    justify-self: start;
+}
+
