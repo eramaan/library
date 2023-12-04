@@ -22,6 +22,13 @@ myLibrary.push(aGameOfThrones);
 
 console.log(myLibrary);
 
+//  display the books
+function displayLibrary(title, author, pages, read) {
+    document.querySelector("#shelf").insertAdjacentHTML( "beforeend" , "<div class=\"book\"><p class=\"author\">" + author + "</p><p class=\"title\">"+ title + "</p><p class=\"pages\">" + pages + "</p><div class=\"btn\"><button><span class=\"material-symbols-outlined\">visibility_off</span></button><button><span class=\"material-symbols-outlined\">delete</span></button></div></div>");
+}
+
+myLibrary.forEach(displayLibrary);
+
 //  create the variables for the form
 let titleField = "a";
 let authorField = "b";
@@ -49,4 +56,12 @@ function addBookToLibrary() {
     document.querySelector("#author").value = "";
     document.querySelector("#pages").value = "";
     document.querySelector("#read").checked = false;
-  }
+
+    updateLibrary()
+}
+
+function updateLibrary() {
+        document.querySelector("#shelf").insertAdjacentHTML( "beforeend" , "<div class=\"book\"><p class=\"author\">" + authorField + "</p><p class=\"title\">"+ titleField + "</p><p class=\"pages\">" + pagesField + "</p><div class=\"btn\"><button><span class=\"material-symbols-outlined\">visibility_off</span></button><button><span class=\"material-symbols-outlined\">delete</span></button></div></div>");
+    }
+
+
