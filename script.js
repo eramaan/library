@@ -1,4 +1,5 @@
-let myLibrary = [];
+//  inizialise library and the book object constructor and add some titles
+ let myLibrary = [];
 
 function Book(title, author, pages, read) {
     this.title = title;
@@ -21,6 +22,31 @@ myLibrary.push(aGameOfThrones);
 
 console.log(myLibrary);
 
+//  create the variables for the form
+let titleField = "a";
+let authorField = "b";
+let pagesField = "c";
+let readField = false; 
+
+//  access the form button
+let submitButton = document.querySelector("#submit-btn")
+submitButton.addEventListener("click", addBookToLibrary);
+
+
 function addBookToLibrary() {
-  // do stuff here
-}
+    console.log("clicked");
+    titleField = document.querySelector("#title").value;
+    authorField = document.querySelector("#author").value;
+    pagesField = parseInt(document.querySelector("#pages").value);
+    readField = document.querySelector("#read").checked;
+    console.log(titleField + authorField + pagesField + readField);
+
+    let newBook = new Book(titleField, authorField, pagesField, readField);
+    myLibrary.push(newBook)
+    console.log(myLibrary);
+
+    document.querySelector("#title").value = "";
+    document.querySelector("#author").value = "";
+    document.querySelector("#pages").value = "";
+    document.querySelector("#read").checked = false;
+  }
