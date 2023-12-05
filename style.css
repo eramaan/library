@@ -30,7 +30,7 @@ h1 {
     justify-self: center;
 }
 .book {
-    background-color: darkkhaki;
+    background-color: cornsilk;
     box-shadow: 2px 2px 5px lightcoral;
     border-radius: 0 5px 5px 0;
     display: grid;
@@ -38,7 +38,7 @@ h1 {
     padding: 15px;
 }
 .book-form {
-    background-color: darkkhaki;
+    background-color: cornsilk;
     box-shadow: 2px 2px 5px lightcoral;
     border-radius: 0 5px 5px 0;
     display: grid;
@@ -48,6 +48,7 @@ h1 {
 #shelf {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(min(20rem, 100%), 1fr));
+    grid-auto-rows: 25rem;
     gap: 15px;
 }
 label {
