@@ -37,6 +37,14 @@ h1 {
     justify-items: center;
     padding: 15px;
 }
+.book-form {
+    background-color: darkkhaki;
+    box-shadow: 2px 2px 5px lightcoral;
+    border-radius: 0 5px 5px 0;
+    display: grid;
+    justify-items: center;
+    padding: 15px;
+}
 #shelf {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(min(20rem, 100%), 1fr));
@@ -46,6 +54,10 @@ label {
     font-size: 1.2rem;
     align-self: end;
     margin-top: 5px;
+}
+input,
+#submit-btn {
+    max-height: 2rem;
 }
 .author {
     align-self: center;
