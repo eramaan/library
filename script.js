@@ -36,8 +36,8 @@ myLibrary.forEach(displayLibrary);
 //  create the variables for the form
 let titleField = "a";
 let authorField = "b";
-let pagesField = "c";
-let readField = false; 
+let pagesField = 0;
+let readField = false;
 
 //  access the buttons
 let submitButton = document.querySelector("#submit-btn");
@@ -95,16 +95,16 @@ deleteButtons.forEach((deleteButton) => deleteButton.addEventListener("click", d
 //     console.log(myLibrary);
 // }
 
-//thanks chat that gived me the rght code, mine what a little fcked up
+//thanks chat that gived me the right code, mine what a little fcked up
 
 function deleteBook(event) {
     const clickedButton = event.target;
     const bookElement = clickedButton.closest(".book");
 
     if (bookElement) {
-        const indexToDelete = bookElement.getAttribute("data-index-number");
+        const indexToDelete = parseInt(bookElement.getAttribute("data-index-number"));
 
-        if (indexToDelete !== null) {
+        if (!isNaN(indexToDelete)) {
             // Remove the book from the array
             myLibrary.splice(indexToDelete, 1);
 
@@ -112,12 +112,15 @@ function deleteBook(event) {
             bookElement.remove();
 
             // Re-index the remaining books in the UI
-            myLibrary.forEach((book, index) => {
-                const bookElement = document.querySelector(`.book[data-index-number="${index}"]`);
+            const books = document.querySelectorAll('.book');
+
+            for (let index = 0; index < myLibrary.length; index++) {
+                const bookElement = books[index];
+                
                 if (bookElement) {
                     bookElement.setAttribute("data-index-number", index);
                 }
-            });
+            }
 
             console.log(myLibrary);
         }
@@ -145,4 +148,5 @@ function readToggle(event) {
 
     console.log(indexToToggle);
     console.log(myLibrary);
-    }
+}
+
